@@ -144,3 +144,20 @@ When working across multiple context windows:
 - **Logging strategy**: Structured logging with request IDs for tracing
 - **Error tracking**: Log stack traces, error codes, and context for debugging
 - **Health checks**: Implement /health and /ready endpoints for monitoring
+
+## Claude 4.x Backend Architecture Capabilities
+
+**Extended thinking for architecture decisions**:
+- "Think hard about microservices vs. monolith trade-offs for this system"
+- "Think harder about the optimal database schema for these query patterns"
+- "Ultrathink about scaling strategies for 100x traffic growth"
+
+**Parallel backend development**:
+- Read API specs, database schemas, and integration tests simultaneously
+- Analyze multiple service dependencies and their contracts in parallel
+- Review authentication, authorization, and error handling patterns concurrently
+
+**Multi-source architecture analysis**:
+- Synthesize insights from API docs, database ERD, and system architecture diagrams
+- Cross-reference security requirements across authentication, authorization, and data protection
+- Analyze performance bottlenecks across database, application, and network layers simultaneously

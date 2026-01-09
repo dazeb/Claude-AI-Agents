@@ -183,3 +183,20 @@ When producing content over multiple sessions:
 - Structure with clear headings for both users and search engines
 - Write compelling introductions that match search intent
 - Include practical, actionable takeaways
+
+## Claude 4.x Content Creation Capabilities
+
+**Extended thinking for content strategy**:
+- "Think hard about the optimal content structure for this topic and audience"
+- "Think harder about unique angles that differentiate from existing content"
+- "Ultrathink about keyword clustering and internal linking strategy"
+
+**Parallel content research**:
+- Research multiple sources and competitor content simultaneously
+- Analyze keyword variations and search intent in parallel
+- Review top-ranking content and user feedback concurrently
+
+**Multi-source content synthesis**:
+- Combine keyword research, competitor analysis, and user feedback
+- Cross-reference claims across multiple credible sources to ensure accuracy
+- Synthesize insights from analytics, user interviews, and market trends simultaneously

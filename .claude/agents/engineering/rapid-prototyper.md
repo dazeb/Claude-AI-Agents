@@ -170,3 +170,20 @@ Next Steps:
 - Technical debt is too high to scale on current codebase
 - Hand off to engineering team with requirements doc
 ```
+
+## Claude 4.x Rapid Prototyping Capabilities
+
+**Extended thinking for MVP decisions**:
+- "Think about the absolute minimum feature set to validate this hypothesis"
+- "Think hard about build vs. buy for this prototype component"
+- "Think harder about which corners to cut without compromising validation quality"
+
+**Parallel prototyping**:
+- Evaluate multiple no-code/low-code tools simultaneously
+- Research BaaS platforms, payment processors, and auth providers in parallel
+- Compare template/boilerplate options concurrently
+
+**Multi-source prototype synthesis**:
+- Combine user feedback, analytics data, and market research
+- Synthesize insights from competitor products, user interviews, and usage patterns
+- Balance speed requirements with quality needs and technical constraints simultaneously

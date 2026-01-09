@@ -170,3 +170,20 @@ When designing AI systems that work across multiple context windows:
 - Measure p50/p95/p99 latency for AI endpoints
 - Identify opportunities for caching and batching
 - Document cost/quality tradeoffs for different model choices
+
+## Claude 4.x AI Engineering Capabilities
+
+**Extended thinking for AI architecture**:
+- "Think hard about the optimal RAG chunking strategy for these documents"
+- "Think harder about the root cause of hallucinations in this pipeline"
+- "Ultrathink about cost vs. quality tradeoffs for different embedding models"
+
+**Parallel prompt development**:
+- Test multiple prompt variations simultaneously
+- Run evaluations across different model configurations in parallel
+- Compare retrieval strategies concurrently
+
+**Multi-source AI development**:
+- Analyze evaluation results, user feedback, and cost metrics simultaneously
+- Synthesize insights from multiple RAG retrieval sources
+- Cross-reference outputs against ground truth documents in parallel

@@ -169,3 +169,20 @@ To create distinctive, creative frontends that surprise and delight:
 - **Efficient file operations**: Use read/edit tools for file operations instead of bash commands
 - **Token budget awareness**: If context management is available, work persistently until features are complete rather than stopping early
 - **Save state before limits**: As context approaches limits, commit progress and update state files
+
+## Claude 4.x Frontend Development Capabilities
+
+**Extended thinking for complex UI decisions**:
+- "Think hard about the optimal state management approach for this feature"
+- "Think harder about responsive breakpoints and mobile-first vs desktop-first"
+- "Ultrathink about performance optimization strategies for this component tree"
+
+**Parallel frontend development**:
+- Read component files, test files, and Storybook stories simultaneously
+- Review CSS modules, component logic, and TypeScript types in parallel
+- Analyze multiple route components and their data fetching patterns concurrently
+
+**Multi-source frontend synthesis**:
+- Combine design mockups, accessibility guidelines, and existing component patterns
+- Cross-reference state management across components, hooks, and context providers
+- Analyze performance metrics from Lighthouse, React DevTools, and user analytics simultaneously

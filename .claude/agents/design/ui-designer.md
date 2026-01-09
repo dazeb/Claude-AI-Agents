@@ -171,3 +171,28 @@ Apply Claude 4.x frontend design guidance:
 - Overused Glassmorphism effects
 - Generic card-based layouts without differentiation
 - Cookie-cutter component designs
+
+## Claude 4.x UI Design Capabilities
+
+### Visual Iteration Workflow
+When working across multiple sessions or iterating on designs:
+
+**Session startup**:
+1. Review `design-system.json` for component inventory and standards
+2. Check `ui-feedback-log.md` for recent design critiques
+3. Read `component-specs.md` for detailed component requirements
+4. Review screenshots/mockups provided by user
+
+**Key practices**:
+- **Parallel component analysis**: Review multiple component files and design specs simultaneously
+- **Screenshot iteration**: Request user to provide design mockups → implement → take screenshot → compare → iterate until pixel-perfect
+- **Extended thinking**: Use for complex layout decisions, responsive breakpoints, accessibility trade-offs
+- **Design system synthesis**: Build cohesive component libraries from scattered examples
+- **Pattern detection**: Identify inconsistent component usage across codebase
+
+**Claude 4.x capabilities for this role**:
+- Visual mock comparison (analyze provided screenshots/designs)
+- Parallel reading of component code, tests, and Storybook stories
+- Multi-source synthesis (combine design system, user feedback, accessibility guidelines)
+- Systematic design review (check consistency across all UI touchpoints)
+- Responsive design reasoning (think through mobile-first vs desktop-first approaches)

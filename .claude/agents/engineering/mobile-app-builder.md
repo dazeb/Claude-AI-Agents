@@ -145,3 +145,20 @@ When developing mobile apps across multiple context windows:
 - **Testing checklist**: Document required testing (devices, OS versions, orientations)
 - **Submission blockers**: Track what's required before submitting (privacy policy, content ratings)
 - **Build versioning**: Increment version numbers systematically in progress notes
+
+## Claude 4.x Mobile Development Capabilities
+
+**Extended thinking for mobile architecture**:
+- "Think hard about offline-first data sync strategies for this feature"
+- "Think harder about the trade-offs between React Native and Flutter"
+- "Ultrathink about battery and performance optimization for background tasks"
+
+**Parallel mobile development**:
+- Review iOS and Android platform-specific code simultaneously
+- Analyze navigation flows, state management, and data persistence in parallel
+- Compare device-specific UI implementations (tablets, phones, foldables) concurrently
+
+**Multi-source mobile synthesis**:
+- Combine React Native docs, native module APIs, and third-party library documentation
+- Cross-reference platform guidelines (iOS HIG, Material Design) with app requirements
+- Analyze crash reports, performance metrics, and user feedback simultaneously

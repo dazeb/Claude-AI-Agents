@@ -375,6 +375,120 @@ Multiple agents can work together on complex features:
 
 ---
 
+### Pattern 4: Managing Long Sessions
+
+When working across many features, refresh context to maintain code quality:
+
+```markdown
+## Session Management Strategy
+
+**When to use `/clear`**:
+- After completing 3-4 atomic units
+- When context feels cluttered
+- Before switching to a different feature area
+- After any extended debugging session
+
+**Recovery after `/clear`**:
+1. Agent reads claude-progress.txt (recovers session memory)
+2. Agent checks tests.json (sees completed vs. pending work)
+3. Agent runs init.sh (verifies environment)
+4. Ready to continue with fresh, focused context
+
+**Result**: Better code quality with focused attention on current task
+```
+
+> 🎯 **Why**: Fresh context = sharper reasoning. State files ensure no information loss.
+
+---
+
+### Pattern 5: Triggering Extended Thinking
+
+For complex decisions, explicitly request extended thinking:
+
+```markdown
+## Extended Thinking Triggers
+
+Use these phrases to activate deeper reasoning:
+
+**"think"** - Basic extended thinking
+Example: "Think about the best database schema for this feature"
+
+**"think hard"** - Deeper analysis
+Example: "Think hard about the trade-offs between microservices vs. monolith"
+
+**"think harder"** - Complex problem solving
+Example: "Think harder about why these tests are flaky using 5 Whys"
+
+**"ultrathink"** - Maximum depth reasoning
+Example: "Ultrathink about the full TCO analysis for build vs. buy"
+
+## Best Use Cases by Agent
+
+- **Backend Architect**: Architecture decisions, scaling strategies
+- **AI Engineer**: RAG pipeline design, prompt optimization
+- **Test Results Analyzer**: Root cause analysis of complex failures
+- **Tool Evaluator**: Build vs. buy decisions, vendor selection
+- **Performance Benchmarker**: Bottleneck identification, optimization paths
+- **Growth Hacker**: Multi-variate experiment design
+```
+
+> 💡 **Pro Tip**: Extended thinking is most valuable for decisions with multiple trade-offs or non-obvious solutions.
+
+---
+
+### Pattern 6: Testing Agent Effectiveness
+
+Before deploying agents to your team, measure their impact:
+
+```markdown
+## Agent Evaluation Framework
+
+**1. Create 3 Test Scenarios**
+
+Example for @Frontend Developer:
+- Scenario 1: "Build a login form with email/password validation"
+- Scenario 2: "Create a responsive dashboard with 4 metric cards"
+- Scenario 3: "Fix accessibility issues in the checkout flow"
+
+**2. Measure Baseline (Without Agent)**
+
+Run each scenario with Claude (no agent loaded):
+- Time to completion
+- Code quality (subjective 1-5 rating)
+- Required iterations
+- Adherence to project patterns
+
+**3. Measure With Agent (Agent Loaded)**
+
+Run same scenarios with agent:
+- Did agent activate correctly?
+- Time to completion vs. baseline
+- Code quality vs. baseline
+- Did agent follow project conventions?
+- Were there any hallucinations or mistakes?
+
+**4. Calculate Impact**
+
+Improvements to look for:
+- ✅ Faster time to completion (20-50% faster)
+- ✅ Better code quality (fewer revisions needed)
+- ✅ Consistent adherence to project patterns
+- ✅ Correct tool/library selection
+- ✅ Proper error handling and edge cases
+
+**5. Iterate Based on Results**
+
+If agent underperforms:
+- Add missing context to agent definition
+- Include more specific examples
+- Clarify success criteria in "When to Use" section
+- Update tools/technologies section
+```
+
+> 🎯 **Goal**: Agents should provide 20-50% improvement in quality and speed for their specialized tasks.
+
+---
+
 ## ⚡ Claude 4.5 Optimizations
 
 These agents leverage Claude 4.5's unique capabilities:

@@ -137,3 +137,20 @@ When managing infrastructure across multiple context windows:
 - **Iterate on thresholds**: Adjust alert thresholds based on false positive rate
 - **Document alert responses**: Add runbook links to alert definitions
 - **Track alert fatigue**: Monitor alert volume and acknowledgment rates
+
+## Claude 4.x DevOps Automation Capabilities
+
+**Extended thinking for infrastructure decisions**:
+- "Think hard about the pros/cons of ECS vs. EKS for this workload"
+- "Think harder about the root cause of these recurring deployment failures"
+- "Ultrathink about the optimal CI/CD pipeline architecture for this monorepo"
+
+**Parallel infrastructure work**:
+- Review multiple environment configurations (dev, staging, prod) simultaneously
+- Analyze logs from different services in parallel during incidents
+- Compare infrastructure costs across cloud providers concurrently
+
+**Multi-source DevOps analysis**:
+- Synthesize insights from application logs, infrastructure metrics, and deployment history
+- Cross-reference security findings from vulnerability scans, penetration tests, and audit reports
+- Analyze performance issues across application code, infrastructure config, and network topology simultaneously

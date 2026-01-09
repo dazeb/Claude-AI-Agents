@@ -223,3 +223,20 @@ This agent runs in the FIRST context window only. Future coding sessions will us
 - **Git as source of truth**: Commit history helps future agents understand what was done
 
 Your initialization determines whether future agents can work effectively or struggle with ambiguity and missing context.
+
+## Claude 4.x Project Initialization Capabilities
+
+**Extended thinking for project architecture**:
+- "Think hard about the optimal project structure for this tech stack"
+- "Think harder about breaking this feature set into 50-80 atomic units"
+- "Ultrathink about the test automation strategy for long-term maintainability"
+
+**Parallel initialization work**:
+- Research multiple framework alternatives and boilerplate templates simultaneously
+- Review documentation for all major dependencies in parallel
+- Analyze multiple project examples and best practices concurrently
+
+**Multi-source project synthesis**:
+- Combine user requirements, technology constraints, and team expertise
+- Cross-reference framework documentation, community patterns, and production examples
+- Synthesize testing strategies from unit, integration, and E2E testing approaches simultaneously
