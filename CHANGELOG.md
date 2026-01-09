@@ -1,5 +1,91 @@
 # Changelog
 
+## Version 2.1 - Telegram Remote Approval System (January 2026)
+
+### Major Features
+
+#### 🚀 Telegram Notifier - Interactive Approval System
+- **Remote Approval Capability**: Claude can now request user authorization before executing sensitive operations via Telegram
+- **Interactive Buttons**: Approve/Deny buttons directly in Telegram messages
+- **Asynchronous Workflows**: Start tasks and leave your computer - approve actions from your phone
+- **Human-in-the-Loop AI**: Maintain control over dangerous operations (database changes, deployments, API calls)
+
+### Technical Improvements
+
+#### Telegram Notifier Implementation
+- **Fixed Button Visibility Issue**: 
+  - Root cause: Markdown asterisks in message text conflicted with inline keyboard rendering
+  - Solution: Removed Markdown formatting from approval messages, use plain text with `parse_mode: null`
+- **Sequential Polling Architecture**: 
+  - Replaced `setInterval` with async loop to prevent overlapping `getUpdates` requests
+  - Eliminated "Conflict: terminated by other getUpdates request" errors
+- **Pending Updates Management**: Added `clearPendingUpdates()` method to prevent polling conflicts
+- **Approval Workflow Methods**:
+  - `requestApproval(action, details, timeout)` - Send approval request with buttons
+  - `waitForCallbackResponse(messageId, timeout)` - Poll for user response
+  - `answerCallbackQuery(callbackQueryId, text)` - Acknowledge button press
+  - `editMessageReplyMarkup(messageId, replyMarkup)` - Remove buttons after response
+
+#### Folder Organization
+- Cleaned up `.claude/tools/telegram-notifier/` directory
+- Removed 11 temporary test/debug files (test-*.js, debug-*.js)
+- Removed 5 redundant documentation files
+- Final structure: 6 core files + 2 example files + 1 helper script
+
+### Documentation Updates
+
+#### README.md
+- **New Prominent Section**: "🚀 Start Tasks & Go! - Remote Approval via Telegram" 
+- Added callout highlighting ability to delegate work and approve from phone
+- Enhanced Telegram section with approval code examples
+- Updated use cases to emphasize async workflows:
+  - Long-running tasks (start refactor, go to lunch)
+  - Overnight processing (work while sleeping)
+  - Remote work (delegate from anywhere)
+  - Security (human approval for dangerous operations)
+
+#### New Files
+- `APPROVAL_GUIDE.md` - Comprehensive guide for approval system usage
+- `walkthrough.md` - Implementation walkthrough and debugging process
+- `examples/approval-workflow-example.js` - 3 real-world approval scenarios
+
+#### Updated Files
+- `.gitignore` - Added CLAUDE.md and GEMINI.md exclusions
+
+### Use Cases
+
+The approval system enables new workflows:
+
+1. **Async Development**: `"Refactor the authentication module"` → approve changes during lunch break
+2. **Overnight Batch Processing**: `"Migrate 10k user records"` → approve checkpoints from bed
+3. **Remote Operations**: `"Deploy to production"` → authorize from anywhere via phone
+4. **Multi-timezone Teams**: Team members can approve Claude's work across time zones
+
+### Files Modified
+
+**Implementation:**
+- `.claude/tools/telegram-notifier/telegram-notifier.js` - Core approval system (750 lines)
+
+**Documentation:**
+- `README.md` - Emphasized remote approval capability
+- `.claude/tools/telegram-notifier/APPROVAL_GUIDE.md` (NEW)
+- `.claude/tools/telegram-notifier/examples/approval-workflow-example.js` (NEW)
+- `C:\Users\dbenn\.gemini\antigravity\brain\[...]\walkthrough.md` (NEW)
+
+**Configuration:**
+- `.gitignore` - Added CLAUDE.md, GEMINI.md
+
+### Testing Results
+
+All approval workflow tests passed:
+- ✅ Button rendering in Telegram
+- ✅ Callback detection and handling
+- ✅ Timeout handling
+- ✅ End-to-end approval cycle
+- ✅ Sequential polling (no conflicts)
+
+---
+
 ## Version 2.0 - Long-Running Agents Update (January 2025)
 
 ### Major Enhancements

@@ -8,6 +8,22 @@
 
 ---
 
+## 🚀 **Start Tasks & Go!** - Remote Approval via Telegram
+
+> **🎯 New Feature**: Assign Claude a task, then **leave your computer**. Approve or deny Claude's actions right from your phone using our Telegram bot with interactive buttons!
+
+**Perfect for:**
+- 💼 **Long-running tasks** - Start a refactor, go to lunch, approve changes from your phone
+- 🛏️ **Overnight processing** - Let Claude work while you sleep, wake up to approval requests
+- 🏖️ **Remote work** - Delegate tasks from anywhere, stay in control via Telegram
+- 🔒 **Security** - Human-in-the-loop approval for sensitive operations (database changes, deployments, API calls)
+
+👉 **[Jump to Telegram Setup](#-telegram-notifier---remote-approval-system)** to enable remote task approval in 2 minutes.
+
+---
+
+---
+
 ## 🎯 Start Here: The Project Initializer
 
 > ⚠️ **CRITICAL FIRST STEP**: Always begin with the [**Project Initializer**](.claude/agents/engineering/project-initializer.md) agent. It's the foundation that makes all other agents effective.
@@ -273,10 +289,15 @@ Complex features are broken into **Atomic Units** in `tests.json`:
 cd your-project-root
 git clone https://github.com/yourusername/claude-ai-agents.git .claude
 
-# 2. Start with the Initializer (see example prompts above)
+# 2. (Optional) Set up Telegram notifications
+cd .claude/tools/telegram-notifier
+npm install
+node telegram-notifier.js setup
+
+# 3. Start with the Initializer (see example prompts above)
 # Copy one of the 3 starter prompts and run it with Claude
 
-# 3. Use specialized agents for features
+# 4. Use specialized agents for features
 # Example: "@Frontend Developer, implement the login form from tests.json"
 ```
 
@@ -292,6 +313,206 @@ Agents in `.claude/agents/` are automatically discoverable. Reference them with:
 ### For Claude Web/Desktop
 
 Copy the content of any agent `.md` file into your system prompt or custom instructions section.
+
+---
+
+## 📱 Telegram Notifier - Remote Approval System
+
+**🎯 Game Changer**: The Telegram Notifier now includes **interactive approval buttons** that let you control Claude remotely!
+
+### ⭐ Remote Approval (NEW!)
+
+**Start a task and walk away** - Claude will send approval requests to your phone:
+
+```javascript
+// Claude needs your approval before making changes
+const approved = await notifier.requestApproval(
+    'Modify database configuration',
+    'Update connection strings in production',
+    300000 // 5 minute timeout
+);
+
+if (approved) {
+    // User clicked ✅ Approve on their phone
+    await applyDatabaseChanges();
+} else {
+    // User clicked ❌ Deny
+    console.log('Change rejected by user');
+}
+```
+
+**You'll receive in Telegram:**
+```
+🤖 Claude Code Authorization Request
+
+📋 Action: Modify database configuration
+📝 Details: Update connection strings in production
+⏰ Timeout: 300 seconds
+
+Please approve or deny this action:
+[✅ Approve]  [❌ Deny]
+```
+
+### ✨ Additional Features
+
+Send real-time notifications for:
+- ✅ Task completions
+- 🚀 Deployment status  
+- 🚨 Error alerts
+- 💚 System health checks
+- 📊 Progress reports
+- 💬 Custom messages
+
+### 🚀 Quick Start
+
+```bash
+cd .claude/tools/telegram-notifier
+```
+
+#### Option 1: Automatic Setup (Recommended)
+```bash
+# Run the notifier - setup wizard launches automatically if needed
+node telegram-notifier.js test
+```
+
+#### Option 2: Manual Setup
+```bash
+# Install dependencies
+npm install
+
+# Run setup wizard
+node telegram-notifier.js setup
+# or
+npm run setup
+```
+
+The interactive wizard will:
+1. Guide you through getting a bot token from @BotFather
+2. Validate your token with Telegram API
+3. Auto-detect your chat ID
+4. Create complete `.env` configuration
+5. Set up directory structure
+
+### 📋 Usage Examples
+
+```bash
+# Test connectivity
+npm test
+
+# Send a simple message
+node telegram-notifier.js send "Hello from Claude!"
+
+# Task completion notification
+node telegram-notifier.js task "User Authentication" "4" "45 minutes"
+
+# See all notification types
+npm run examples
+```
+
+### 💻 Programmatic Usage
+
+```javascript
+const TelegramNotifier = require('./telegram-notifier');
+const notifier = new TelegramNotifier();
+
+// Task completion
+await notifier.notifyTaskComplete('Feature XYZ', {
+    session: '5',
+    duration: '30 minutes',
+    notes: 'Implemented with tests'
+});
+
+// Deployment notification
+await notifier.notifyDeployment('v2.4.1', 'production', 'success');
+
+// Error alert
+await notifier.notifyError('API Timeout', 'Connection failed', {
+    file: 'api/client.js',
+    line: '127'
+});
+```
+
+### 🔧 Integration Examples
+
+**Git Hooks** - Auto-notify on commits:
+```bash
+# .git/hooks/post-commit
+#!/bin/bash
+./scripts/notify.sh commit
+```
+
+**CI/CD** - Build notifications:
+```yaml
+- name: Notify Success
+  run: node telegram-notifier.js send "✅ Build successful"
+  env:
+    TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+    TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+```
+
+**NPM Scripts** - Task notifications:
+```json
+{
+  "scripts": {
+    "posttest": "node telegram-notifier.js task 'Tests completed'",
+    "postdeploy": "node telegram-notifier.js send '🚀 Deployed!'"
+  }
+}
+```
+
+### 📚 Complete Documentation
+
+- **[TELEGRAM_QUICK_START.md](.claude/tools/telegram-notifier/TELEGRAM_QUICK_START.md)** - 2-minute quick reference
+- **[TELEGRAM_NOTIFIER_GUIDE.md](.claude/tools/telegram-notifier/TELEGRAM_NOTIFIER_GUIDE.md)** - Complete usage guide
+- **[SETUP_WIZARD_DEMO.md](.claude/tools/telegram-notifier/SETUP_WIZARD_DEMO.md)** - Setup wizard walkthrough
+- **[TELEGRAM_IMPROVEMENTS.md](.claude/tools/telegram-notifier/TELEGRAM_IMPROVEMENTS.md)** - 10 advanced features to add
+
+### 🎯 Key Features
+
+- 🧙 **Interactive setup wizard** - Zero manual configuration
+- ✅ **Real-time validation** - Tests credentials before saving
+- 🔍 **Auto-detection** - Finds your chat ID automatically
+- 📁 **File management** - Creates all necessary files/directories
+- 🛡️ **Secure** - Uses .env for credentials (never committed)
+
+### 📦 What's Included
+
+```
+.claude/tools/telegram-notifier/
+├── telegram-notifier.js          # Complete implementation with setup wizard (17KB)
+├── examples/
+│   └── telegram-usage-examples.js   # 6 working examples
+├── scripts/
+│   └── notify.sh                    # Shell wrapper for automation
+└── Documentation (4 files)
+```
+
+### 🔐 Security
+
+Your `.env` file is automatically protected:
+- Already in `.gitignore` - Won't be committed
+- Token validation before saving
+- No hardcoded credentials
+- Enable/disable flag for testing
+
+### 💡 Use Cases
+
+**🌟 Remote Approval Workflows (NEW!)**
+- **Start & Leave** - Assign Claude a multi-hour task, leave for the day, approve key decisions from your phone
+- **Sleep Mode** - Let Claude work overnight on data migrations, approve checkpoints in the morning
+- **From Anywhere** - Control dangerous operations (prod deploys, schema changes) remotely with confidence
+- **Async Collaboration** - Team members can approve Claude's work from different time zones
+
+**Classic Notifications:**
+- **Long-running tasks** - Get notified when builds/tests complete
+- **Background processes** - Monitor data migrations, backups
+- **CI/CD pipelines** - Build status, deployment confirmations
+- **Error monitoring** - Real-time alerts for production issues
+- **Team coordination** - Keep everyone updated on progress
+
+> **💡 Pro Tip**: The approval system transforms Claude from a synchronous assistant into an **autonomous worker you can trust** - start tasks, go about your day, and maintain control via your phone!
+
+Perfect for keeping stakeholders informed while working with Claude AI Agents!
 
 ---
 

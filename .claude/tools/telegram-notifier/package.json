@@ -1,0 +1,30 @@
+{
+  "name": "claude-ai-agents-telegram-notifier",
+  "version": "1.0.0",
+  "description": "Telegram notification system for Claude AI Agents",
+  "main": "telegram-notifier.js",
+  "scripts": {
+    "setup": "node telegram-notifier.js setup",
+    "test": "node telegram-notifier.js test",
+    "notify": "node telegram-notifier.js send",
+    "examples": "node examples/telegram-usage-examples.js",
+    "demo": "npm run examples"
+  },
+  "keywords": [
+    "telegram",
+    "notifications",
+    "claude",
+    "ai",
+    "agents",
+    "automation",
+    "devops"
+  ],
+  "author": "Darren Bennett",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
