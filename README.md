@@ -27,7 +27,7 @@ Copy these prompts to get started with different project types:
 
 #### 1. **Full-Stack Web Application**
 ```
-Use the @Project Initializer agent to scaffold a new Next.js 14 e-commerce platform
+Use the @project-initializer agent to scaffold a new Next.js 14 e-commerce platform
 with the following requirements:
 - User authentication (email/password + OAuth)
 - Product catalog with search and filtering
@@ -43,7 +43,7 @@ documenting the architecture decisions.
 
 #### 2. **API Service / Backend**
 ```
-Use the @Project Initializer agent to create a new REST API service in Python (FastAPI)
+Use the @project-initializer agent to create a new REST API service in Python (FastAPI)
 for a social media analytics platform:
 - JWT authentication with refresh tokens
 - User management and permissions (RBAC)
@@ -60,7 +60,7 @@ in claude-progress.txt.
 
 #### 3. **Mobile App (React Native)**
 ```
-Use the @Project Initializer agent to scaffold a new React Native fitness tracking app:
+Use the @project-initializer agent to scaffold a new React Native fitness tracking app:
 - User onboarding and profile setup
 - Activity tracking (steps, workouts, nutrition)
 - Social features (friends, challenges, leaderboard)
@@ -284,9 +284,9 @@ git clone https://github.com/yourusername/claude-ai-agents.git .claude
 
 Agents in `.claude/agents/` are automatically discoverable. Reference them with:
 ```
-@Project Initializer scaffold a new Next.js dashboard
-@Frontend Developer implement the user profile page
-@API Tester write tests for the authentication endpoints
+@project-initializer scaffold a new Next.js dashboard
+@frontend-developer implement the user profile page
+@api-tester write tests for the authentication endpoints
 ```
 
 ### For Claude Web/Desktop
@@ -647,25 +647,25 @@ We welcome contributions! Here's how to help:
 │  THE GOLDEN WORKFLOW                                        │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  1. START: @Project Initializer                            │
-│     ↓ Creates: tests.json, init.sh, progress.txt          │
+│  1. START: @project-initializer                             │
+│     ↓ Creates: tests.json, init.sh, progress.txt            │
 │                                                             │
-│  2. IMPLEMENT: @Specialized Agent                          │
-│     ↓ Reads: progress.txt, tests.json                      │
-│     ↓ Implements: ONE atomic unit                          │
-│     ↓ Verifies: runs tests, manual checks                  │
-│     ↓ Commits: git commit with message                     │
-│     ↓ Updates: tests.json, progress.txt                    │
+│  2. IMPLEMENT: @Specialized Agent                           │
+│     ↓ Reads: progress.txt, tests.json                       │
+│     ↓ Implements: ONE atomic unit                           │
+│     ↓ Verifies: runs tests, manual checks                   │
+│     ↓ Commits: git commit with message                      │
+│     ↓ Updates: tests.json, progress.txt                     │
 │                                                             │
-│  3. REPEAT: Next feature with same/different agent         │
+│  3. REPEAT: Next feature with same/different agent          │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
-│  🎯 REMEMBER:                                               │
-│  • Initializer FIRST (always)                              │
-│  • ONE atomic unit per session                             │
-│  • Verify before marking complete                          │
-│  • Commit after each success                               │
-│  • Update progress.txt with "why" decisions                │
+│  🎯 REMEMBER                                                │
+│  • Initializer FIRST (always)                               │
+│  • ONE atomic unit per session                              │
+│  • Verify before marking complete                           │
+│  • Commit after each success                                │
+│  • Update progress.txt with "why" decisions                 │
 └─────────────────────────────────────────────────────────────┘
 ```
 
