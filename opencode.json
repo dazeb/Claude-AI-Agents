@@ -1,0 +1,154 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "tools": {
+    "bash": true,
+    "edit": true,
+    "write": true,
+    "read": true,
+    "grep": true,
+    "glob": true,
+    "list": true,
+    "patch": true,
+    "todowrite": true,
+    "todoread": true,
+    "webfetch": true
+  },
+  "permission": {
+    "read": {
+      "*.env": "allow",
+      "*.env.*": "allow"
+    },
+    "edit": "ask",
+    "bash": {
+      "*": "ask",
+      "git status": "allow",
+      "git diff": "allow",
+      "git log*": "allow"
+    },
+    "webfetch": "ask"
+  },
+  "agent": {
+    "build": {
+      "description": "Full development with all tools enabled",
+      "mode": "primary",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      },
+      "permission": {
+        "edit": "ask",
+        "bash": {
+          "*": "ask",
+          "git status": "allow",
+          "git diff": "allow",
+          "git log*": "allow"
+        }
+      }
+    },
+    "plan": {
+      "description": "Analysis and planning without making changes",
+      "mode": "primary",
+      "temperature": 0.1,
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      },
+      "permission": {
+        "edit": "deny",
+        "bash": "deny"
+      }
+    },
+    "general": {
+      "description": "General-purpose research and multi-step task execution",
+      "mode": "subagent"
+    },
+    "explore": {
+      "description": "Fast codebase exploration and search",
+      "mode": "subagent"
+    },
+    "backend-architect": {
+      "description": "Backend API design and Go/Fiber development specialist",
+      "mode": "subagent",
+      "prompt": "You are a backend architecture specialist. Focus on API design, database models, and server-side logic. Use Go best practices, GORM patterns, and Fiber framework conventions.",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "frontend-developer": {
+      "description": "React/TypeScript UI development specialist",
+      "mode": "subagent",
+      "prompt": "You are a frontend development specialist. Focus on React 19, TypeScript, Vite, and modern UI patterns. Follow the design system in STYLE.md.",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "devops-automator": {
+      "description": "Docker, Coolify, and deployment automation specialist",
+      "mode": "subagent",
+      "prompt": "You are a DevOps specialist. Focus on Docker, Coolify API integration, deployment workflows, and infrastructure automation.",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "api-tester": {
+      "description": "API endpoint testing and validation specialist",
+      "mode": "subagent",
+      "prompt": "You are an API testing specialist. Test endpoints, validate responses, check error handling, and verify authentication flows.",
+      "tools": {
+        "bash": true,
+        "write": false,
+        "edit": false
+      }
+    },
+    "code-reviewer": {
+      "description": "Code quality and best practices reviewer",
+      "mode": "subagent",
+      "temperature": 0.1,
+      "prompt": "You are a code reviewer. Focus on security, performance, maintainability, Go best practices, and React patterns. Provide constructive feedback without making direct changes.",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    },
+    "security-auditor": {
+      "description": "Security vulnerability analysis and auditing",
+      "mode": "subagent",
+      "temperature": 0.1,
+      "prompt": "You are a security expert. Identify potential security issues: input validation, authentication/authorization flaws, data exposure risks, dependency vulnerabilities, API security.",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": true
+      }
+    },
+    "docs-writer": {
+      "description": "Technical documentation and README maintenance",
+      "mode": "subagent",
+      "prompt": "You are a technical writer. Create clear, comprehensive documentation with proper structure, code examples, and user-friendly language.",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": false
+      }
+    },
+    "deployment-specialist": {
+      "description": "Coolify deployment and template management expert",
+      "mode": "subagent",
+      "prompt": "You are a deployment specialist for PayloadServers. Focus on Coolify API integration, Docker Compose templates, deployment workflows, and tenant management. Reference DEPLOYMENT-GUIDE.md and related docs.",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    }
+  }
+}
