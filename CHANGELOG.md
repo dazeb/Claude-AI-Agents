@@ -1,5 +1,172 @@
 # Changelog
 
+## Version 2.2 - Web Development Agents & Usability Improvements (January 2026)
+
+### Major Features
+
+#### 🌐 New Web Development Agent Category
+Added 7 specialized web development agents to complement existing engineering agents:
+
+1. **React/Next.js Specialist** - Expert in React 18+, Next.js 14+, Server Components, App Router
+2. **API Integration Specialist** - REST, GraphQL, WebSockets, authentication flows, type-safe clients
+3. **Full-Stack Web Developer** - Complete app development from database to UI
+4. **Web Performance Optimizer** - Core Web Vitals optimization, Lighthouse auditing, performance tuning
+5. **PWA Builder** - Progressive Web Apps, offline functionality, service workers, installable apps
+6. **CSS & Tailwind Expert** - Advanced styling, animations, design systems, Tailwind customization
+7. **Static Site Specialist** - JAMstack, SSG with Astro/11ty/Hugo, headless CMS integration
+
+**Total: 1,615 lines of expert guidance** covering:
+- Modern tools and frameworks (React Query, Zod, tRPC, Astro, etc.)
+- Best practices and code examples
+- Common anti-patterns to avoid
+- When to use each specialized agent
+
+#### 📖 Major README Overhaul
+Completely redesigned README for easier onboarding and reduced cognitive load:
+
+**Before:** 900 lines of dense technical documentation with intimidating methodology upfront
+**After:** 250 lines of friendly, approachable content with advanced topics hidden
+
+**Key Changes:**
+- **New 60-second Quick Start** - Simple 3-step intro with immediate value demonstration
+- **Before/After Example** - Shows concrete value of using agents vs generic Claude
+- **Simplified Agent Listings** - Clean tables with "Use When" column instead of dense descriptions
+- **Friendly FAQ Section** - Answers common questions in plain language
+- **Advanced Content Collapsible** - Long-running agents methodology moved to `<details>` section
+- **OpenCode Support** - Clear instructions for OpenCode users
+
+**Impact:**
+- Reduced from 900 to ~250 lines of core content
+- Advanced methodology still available but opt-in
+- Much more welcoming for beginners
+
+#### ⚠️ Project Initializer Emphasis
+Made it crystal clear that users should ALWAYS start with the Project Initializer:
+
+**Added in 4 locations:**
+1. **Prominent Warning Section** - "⚠️ Important: Start Every Project Right" immediately after Quick Start
+2. **First FAQ Question** - "Q: Do I need to use the Project Initializer? **YES, for best results!**"
+3. **Updated Workflow** - Quick Reference now shows "@project-initializer" as step 2
+4. **Highlighted in Agent List** - "🎯 **Project Initializer** | ⭐ **START HERE!**"
+
+**Why This Matters:**
+- Without: Claude forgets context after long conversations
+- With: Claude remembers everything across multiple days/weeks
+- Creates: tests.json, init.sh, claude-progress.txt for long-term memory
+
+#### 🚀 OpenCode Compatibility
+Added complete support for OpenCode users:
+
+**Setup Instructions:**
+- Step-by-step guide for folder renaming (.claude → .opencode, agents → agent)
+- One-liner setup command for quick installation
+- Added to FAQ section
+- Compatibility badges added to README header
+
+**Example one-liner:**
+```bash
+git clone https://github.com/dazeb/Long-Running-AI-Agents.git && \
+mv Long-Running-AI-Agents/.claude .opencode && \
+mv .opencode/agents .opencode/agent && \
+rm -rf Long-Running-AI-Agents
+```
+
+### Technical Improvements
+
+#### Web Development Agent Architecture
+Each web development agent includes:
+- **Comprehensive Capabilities** - 10-15 specific skills
+- **Modern Tech Stack** - Tools, frameworks, libraries for 2026
+- **When to Use** - Clear scenarios for agent activation
+- **Example Tasks** - 7-8 real-world implementation examples
+- **Best Practices** - Code examples and patterns
+- **Anti-patterns** - Common mistakes to avoid
+- **Collaboration** - How agents work together
+
+#### README Structure
+- **Badges** - Added Claude Code and OpenCode compatibility badges
+- **Quick Start** - Condensed from verbose to essential 3 steps
+- **Value Demonstration** - Before/after comparison showing agent impact
+- **Progressive Disclosure** - Advanced content hidden but accessible
+- **Multiple Entry Points** - Users can jump to agents, setup, or FAQ
+
+### Documentation Updates
+
+#### New Files
+- `.claude/agents/web-development/react-nextjs-specialist.md` (NEW)
+- `.claude/agents/web-development/api-integration-specialist.md` (NEW)
+- `.claude/agents/web-development/fullstack-web-developer.md` (NEW)
+- `.claude/agents/web-development/web-performance-optimizer.md` (NEW)
+- `.claude/agents/web-development/pwa-builder.md` (NEW)
+- `.claude/agents/web-development/css-tailwind-expert.md` (NEW)
+- `.claude/agents/web-development/static-site-specialist.md` (NEW)
+
+#### Updated Files
+- `README.md` - Complete redesign for usability
+  - Reduced from 900 to ~250 lines of core content
+  - Added 60-second quick start
+  - Added OpenCode instructions
+  - Emphasized Project Initializer in 4 places
+  - Made advanced content collapsible
+
+### Statistics
+
+**Agent Count:** 43 total (36 → 43)
+- Engineering: 7 agents
+- Web Development: 7 agents (NEW)
+- Design: 5 agents
+- Marketing: 7 agents
+- Product: 3 agents
+- Project Management: 3 agents
+- Operations: 6 agents
+- Testing: 5 agents
+
+**Content:** ~5,200 lines of expert guidance (3,600 → 5,200)
+
+### Use Cases
+
+The new web development agents enable specialized workflows:
+
+1. **Modern Web Apps**: "@react-nextjs-specialist, build a dashboard with Server Components"
+2. **API Integration**: "@api-integration-specialist, connect to Stripe API with error handling"
+3. **Performance Issues**: "@web-performance-optimizer, improve my Lighthouse score from 60 to 95"
+4. **Offline Apps**: "@pwa-builder, make this app work offline with service workers"
+5. **Fast Marketing Sites**: "@static-site-specialist, build a landing page with Astro"
+6. **Styling Systems**: "@css-tailwind-expert, create a design system with Tailwind"
+
+### Key Benefits
+
+1. **Specialized Web Expertise**: 7 domain experts for modern web development
+2. **Better Onboarding**: New users can get started in 60 seconds
+3. **OpenCode Support**: Works with multiple Claude-based tools
+4. **Impossible to Miss Initializer**: Users won't skip the critical first step
+5. **Reduced Intimidation**: Advanced content hidden but available
+6. **Clear Value Prop**: Before/after example shows concrete benefits
+
+### Files Modified
+
+**New Folder:**
+- `.claude/agents/web-development/` (7 new agent files, 1,615 lines)
+
+**Updated Documentation:**
+- `README.md` - Complete redesign (900 → 691 lines, better UX)
+- `CHANGELOG.md` - This entry
+
+### Migration Notes
+
+For existing users:
+- No breaking changes - all existing agents remain unchanged
+- New web development agents are purely additive
+- README changes only affect presentation, not functionality
+- OpenCode users now have clear setup instructions
+
+### References
+
+- [Claude Code CLI](https://www.anthropic.com/claude/code)
+- [OpenCode Documentation](https://github.com/OpenCodeDev/opencode)
+
+---
+
 ## Version 2.1 - Telegram Remote Approval System (January 2026)
 
 ### Major Features
