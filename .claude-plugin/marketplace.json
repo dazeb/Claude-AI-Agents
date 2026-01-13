@@ -6,19 +6,19 @@
     "email": "[email protected]",
     "url": "https://github.com/dazeb/Long-Running-AI-Agents"
   },
-  "description": "Comprehensive collection of 44 specialized AI agents for Claude Code - covering web development, engineering, design, marketing, product, operations, and testing",
-  "version": "2.2.0",
+  "description": "Comprehensive collection of 45 specialized AI agents for Claude Code with Hooks, MCP, and LSP integration - covering web development, engineering, design, marketing, product, operations, and testing",
+  "version": "2.3.0",
   "plugins": [
     {
       "name": "web-development-agents",
       "source": "./",
-      "description": "7 specialized web development agents: React/Next.js, API Integration, Full-Stack, Performance, PWA, CSS/Tailwind, Static Sites",
-      "version": "2.2.0",
+      "description": "8 specialized web development agents: React/Next.js, API Integration, Full-Stack, Performance, PWA, CSS/Tailwind, Static Sites, Browser Automation",
+      "version": "2.3.0",
       "author": {
         "name": "dazeb",
         "url": "https://github.com/dazeb"
       },
-      "tags": ["web-development", "react", "nextjs", "api", "performance", "pwa", "css", "tailwind", "agents"],
+      "tags": ["web-development", "react", "nextjs", "api", "performance", "pwa", "css", "tailwind", "browser-automation", "agents"],
       "agents": [
         "web-development/react-nextjs-specialist",
         "web-development/api-integration-specialist",
@@ -26,14 +26,15 @@
         "web-development/web-performance-optimizer",
         "web-development/pwa-builder",
         "web-development/css-tailwind-expert",
-        "web-development/static-site-specialist"
+        "web-development/static-site-specialist",
+        "web-development/browser-automation-specialist"
       ]
     },
     {
       "name": "engineering-agents",
       "source": "./",
       "description": "8 core engineering agents including the essential Project Initializer for long-term memory and Agent Creator for building custom agents",
-      "version": "2.2.0",
+      "version": "2.3.0",
       "author": {
         "name": "dazeb",
         "url": "https://github.com/dazeb"
@@ -54,7 +55,7 @@
       "name": "design-agents",
       "source": "./",
       "description": "5 design agents for UI/UX, branding, visual storytelling, and delightful interactions",
-      "version": "2.2.0",
+      "version": "2.3.0",
       "author": {
         "name": "dazeb",
         "url": "https://github.com/dazeb"
@@ -72,7 +73,7 @@
       "name": "marketing-agents",
       "source": "./",
       "description": "7 marketing agents for content creation, growth hacking, and social media strategy",
-      "version": "2.2.0",
+      "version": "2.3.0",
       "author": {
         "name": "dazeb",
         "url": "https://github.com/dazeb"
@@ -92,7 +93,7 @@
       "name": "product-pm-agents",
       "source": "./",
       "description": "6 product management agents for feedback analysis, prioritization, and project coordination",
-      "version": "2.2.0",
+      "version": "2.3.0",
       "author": {
         "name": "dazeb",
         "url": "https://github.com/dazeb"
@@ -111,7 +112,7 @@
       "name": "operations-testing-agents",
       "source": "./",
       "description": "11 operations and testing agents for analytics, infrastructure, testing, and quality assurance",
-      "version": "2.2.0",
+      "version": "2.3.0",
       "author": {
         "name": "dazeb",
         "url": "https://github.com/dazeb"
@@ -134,7 +135,7 @@
       "name": "essentials-bundle",
       "source": "./",
       "description": "Recommended starter bundle: Project Initializer + Web Development agents (8 total)",
-      "version": "2.2.0",
+      "version": "2.3.0",
       "author": {
         "name": "dazeb",
         "url": "https://github.com/dazeb"
