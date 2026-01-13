@@ -1,7 +1,7 @@
 {
   "name": "long-running-ai-agents",
-  "version": "2.2.0",
-  "description": "Comprehensive collection of 44 specialized AI agents for Claude Code - covering web development, engineering, design, marketing, product, operations, and testing",
+  "version": "2.3.0",
+  "description": "Comprehensive collection of 45 specialized AI agents for Claude Code with Hooks, MCP, and LSP integration - covering web development, engineering, design, marketing, product, operations, and testing",
   "author": {
     "name": "dazeb",
     "email": "[email protected]",
@@ -38,7 +38,8 @@
       "web-performance-optimizer",
       "pwa-builder",
       "css-tailwind-expert",
-      "static-site-specialist"
+      "static-site-specialist",
+      "browser-automation-specialist"
     ],
     "engineering": [
       "project-initializer",
@@ -103,7 +104,8 @@
         "web-development/web-performance-optimizer",
         "web-development/pwa-builder",
         "web-development/css-tailwind-expert",
-        "web-development/static-site-specialist"
+        "web-development/static-site-specialist",
+        "web-development/browser-automation-specialist"
       ]
     }
   },
@@ -111,7 +113,10 @@
     "longRunningAgents": true,
     "projectInitializer": true,
     "multiCategory": true,
-    "bundleSupport": true
+    "bundleSupport": true,
+    "hooks": true,
+    "mcpIntegration": true,
+    "lspSupport": true
   },
   "requirements": {
     "claudeCode": ">=1.0.0"

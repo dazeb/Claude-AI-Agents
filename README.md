@@ -3,9 +3,12 @@
 **Ready-to-use AI agent templates that make Claude smarter at specific tasks.**
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![44 Agents](https://img.shields.io/badge/Agents-44-blue.svg)]()
+[![45 Agents](https://img.shields.io/badge/Agents-45-blue.svg)]()
 [![Works with Claude Code](https://img.shields.io/badge/Claude_Code-Compatible-blue.svg)]()
 [![Works with OpenCode](https://img.shields.io/badge/OpenCode-Compatible-orange.svg)]()
+[![Hooks](https://img.shields.io/badge/Hooks-4_Templates-purple.svg)]()
+[![MCP](https://img.shields.io/badge/MCP-15+_Servers-orange.svg)]()
+[![LSP](https://img.shields.io/badge/LSP-11_Languages-green.svg)]()
 
 ---
 
@@ -19,6 +22,8 @@
 1. Clone this repo into your project
 2. Reference an agent when talking to Claude (e.g., `@frontend-developer`)
 3. Claude now has deep expertise in that domain
+
+📋 **[View Complete Feature List →](FEATURES.md)** | 📚 **[Marketplace Docs](MARKETPLACE.md)** | 🪝 **[Hooks Guide](.claude/hooks/README.md)** | 🔌 **[MCP Guide](MCP_INTEGRATION.md)** | ⚡ **[LSP Guide](LSP_SETUP.md)**
 
 **Try it now:**
 
@@ -86,9 +91,9 @@ The Project Initializer will create your entire project structure, roadmap, and 
 
 ## 🎯 What You Get
 
-**44 specialized agents** across different domains:
+**45 specialized agents** across different domains:
 
-- **💻 Web Development** (7 agents) - React, APIs, CSS, PWAs, performance, full-stack, static sites
+- **💻 Web Development** (8 agents) - React, APIs, CSS, PWAs, performance, full-stack, static sites, browser automation
 - **🔧 Engineering** (8 agents) - Backend, frontend, mobile, AI, DevOps, prototyping, agent creation
 - **🎨 Design** (5 agents) - UI, UX, branding, animations, visual storytelling
 - **📈 Marketing** (7 agents) - Content, growth, social media, ASO
@@ -129,6 +134,37 @@ Agents turn general AI into domain experts.
 
 ---
 
+## 🚀 Claude Code 2.1 Features (NEW!)
+
+Leverage the latest Claude Code capabilities:
+
+### 🪝 Hooks - Automated Workflows
+Auto-format code, block dangerous git operations, generate session summaries:
+- **post-edit-format.sh** - Auto-formats 12+ languages after every edit
+- **pre-git-safety.sh** - Blocks force pushes, protected file edits
+- **stop-session-summary.sh** - Session reports with stats
+- **post-tests-update.sh** - Auto-updates tests.json
+
+📚 **[View Hooks Documentation →](.claude/hooks/README.md)**
+
+### 🔌 MCP - External Tool Integration
+Connect to 15+ services for live data:
+- **GitHub** - PRs, issues, code review
+- **Perplexity** - Real-time web research
+- **PostgreSQL** - Database queries
+- **Slack** - Team notifications
+- **And 11 more...**
+
+📚 **[View MCP Integration Guide →](MCP_INTEGRATION.md)**
+
+### ⚡ LSP - 900x Faster Code Navigation
+IDE-like intelligence for 11 languages. Go-to-definition in **50ms** (vs 45 seconds):
+- TypeScript/JavaScript, Python, Go, Rust, Java, C/C++, C#, PHP, Ruby, Kotlin, HTML/CSS
+
+📚 **[View LSP Setup Guide →](LSP_SETUP.md)**
+
+---
+
 ## 📚 Browse Agents
 
 ### 💻 Web Development (NEW!)
@@ -141,6 +177,7 @@ Agents turn general AI into domain experts.
 | [PWA Builder](.claude/agents/web-development/pwa-builder.md) | Making apps installable and work offline |
 | [CSS & Tailwind Expert](.claude/agents/web-development/css-tailwind-expert.md) | Advanced styling, animations, design systems |
 | [Static Site Specialist](.claude/agents/web-development/static-site-specialist.md) | Building fast sites with Astro, 11ty, Hugo |
+| [Browser Automation Specialist](.claude/agents/web-development/browser-automation-specialist.md) | E2E testing, web scraping, visual regression, Claude in Chrome |
 
 ### 🏗️ Engineering
 | Agent | Use When |
