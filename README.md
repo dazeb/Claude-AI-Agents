@@ -66,14 +66,15 @@ That's it! Claude will now respond with frontend-specific best practices, modern
 <details>
 <summary>🤖 <strong>AI Setup - For AI Agents</strong></summary>
 
-> **Copy this section and paste it into your AI agent's context to enable these specialized agents.**
+> **Copy the instructions below and paste into your AI agent's context to enable these specialized agents.**
 
-```markdown
-# AI Agent Setup Instructions
+---
+
+### AI Agent Setup Instructions
 
 You are being equipped with specialized agent capabilities from the Long-Running-AI-Agents repository.
 
-## Installation Steps
+#### Installation Steps
 
 1. **Clone the repository into the project's `.claude` directory:**
    ```bash
@@ -88,7 +89,7 @@ You are being equipped with specialized agent capabilities from the Long-Running
 
 3. **You now have access to 20 specialized development agents.** Reference them using the `@agent-name` syntax.
 
-## How to Use Agents
+#### How to Use Agents
 
 When the user requests a task that matches an agent's expertise:
 
@@ -133,7 +134,7 @@ When the user requests a task that matches an agent's expertise:
    - Avoid documented anti-patterns
    - Apply systematic skills (TDD, debugging protocols, verification)
 
-## Project Initialization
+#### Project Initialization
 
 **For new projects, start with the Project Initializer:**
 ```bash
@@ -148,7 +149,7 @@ It will guide you to create:
 
 These files enable long-term memory across sessions.
 
-## Agent Discovery
+#### Agent Discovery
 
 To see all available agents:
 ```bash
@@ -160,7 +161,7 @@ To search for agents by capability:
 grep -r "Use When" .claude/agents/
 ```
 
-## Example Workflow
+#### Example Workflow
 
 User request: "Build a Next.js e-commerce site with Stripe integration"
 
@@ -171,7 +172,7 @@ Your response:
 4. Activate `@api-tester` - Test payment endpoints
 5. Apply systematic skills throughout (TDD, verification, code review)
 
-## Skills System
+#### Skills System
 
 You also have access to 14 composable skills in `.claude/skills/`:
 - `test-driven-development.md` - RED-GREEN-REFACTOR workflow
@@ -183,13 +184,14 @@ You also have access to 14 composable skills in `.claude/skills/`:
 
 Read and apply these skills to ensure high-quality, systematic development.
 
-## Repository Information
+#### Repository Information
 
 - **Source:** https://github.com/dazeb/Long-Running-AI-Agents
 - **20 Focused Development Agents** across 4 categories
 - **14 Composable Skills** for systematic development
 - **MIT Licensed**
-```
+
+---
 
 </details>
 
