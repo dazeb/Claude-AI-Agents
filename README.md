@@ -95,7 +95,7 @@ When the user requests a task that matches an agent's expertise:
 1. **Identify the appropriate agent** from these categories:
 
    **Engineering (6 agents):**
-   - `@project-initializer` - ALWAYS use first for new projects (creates tracking files)
+   - `@project-initializer` - Start here for new projects (sets up long-term memory)
    - `@backend-architect` - APIs, databases, server-side architecture
    - `@frontend-developer` - UI development with React/Vue/Svelte
    - `@ai-engineer` - LLM integration, RAG systems, AI features
@@ -133,14 +133,14 @@ When the user requests a task that matches an agent's expertise:
    - Avoid documented anti-patterns
    - Apply systematic skills (TDD, debugging protocols, verification)
 
-## Critical: Project Initialization
+## Project Initialization
 
-**For ANY new project, ALWAYS start with:**
+**For new projects, start with the Project Initializer:**
 ```bash
 cat .claude/agents/engineering/project-initializer.md
 ```
 
-Then follow its guidance to create:
+It will guide you to create:
 - `tests.json` - Feature tracking and completion status
 - `init.sh` - Environment setup automation
 - `claude-progress.txt` - Session memory and decisions
@@ -194,15 +194,15 @@ Read and apply these skills to ensure high-quality, systematic development.
 </details>
 
 <details>
-<summary>⚠️ <strong>Important: Start Every Project Right</strong></summary>
+<summary><strong>Start Every Project Right</strong></summary>
 
-> **🎯 ALWAYS begin with the [Project Initializer](.claude/agents/engineering/project-initializer.md) agent!**
+**We recommend starting with the [Project Initializer](.claude/agents/engineering/project-initializer.md) agent for new projects.**
 
-The Project Initializer creates essential infrastructure that gives Claude long-term memory:
-- 📋 **`tests.json`** - Tracks all features and their completion status
-- 🔧 **`init.sh`** - One-command environment setup
-- 📝 **`claude-progress.txt`** - Remembers decisions across sessions
-- 🗂️ **Project structure** - Organized files and configs
+The Project Initializer sets up essential infrastructure that gives Claude long-term memory:
+- **`tests.json`** - Tracks all features and their completion status
+- **`init.sh`** - One-command environment setup
+- **`claude-progress.txt`** - Remembers decisions across sessions
+- **Project structure** - Organized files and configs
 
 **Without these files:** Claude forgets context after long conversations and has to restart from scratch.
 
@@ -259,12 +259,12 @@ Claude: Creates basic form with inline styles and no validation
 ```
 You: "@react-nextjs-specialist, build me a login form"
 Claude: Creates form with:
-  ✅ React Hook Form for validation
-  ✅ Zod schema for type safety
-  ✅ Server Actions for authentication
-  ✅ Loading states and error handling
-  ✅ Accessibility (ARIA labels, keyboard nav)
-  ✅ Responsive design
+  - React Hook Form for validation
+  - Zod schema for type safety
+  - Server Actions for authentication
+  - Loading states and error handling
+  - Accessibility (ARIA labels, keyboard nav)
+  - Responsive design
 ```
 
 Agents turn general AI into domain experts.
@@ -321,7 +321,7 @@ IDE-like intelligence for 11 languages. Go-to-definition in **50ms** (vs 45 seco
 ### 🏗️ Engineering (6 agents)
 | Agent | Use When |
 |-------|----------|
-| [🎯 **Project Initializer**](.claude/agents/engineering/project-initializer.md) | ⭐ **START HERE!** Every new project (enables long-term memory) |
+| [**Project Initializer**](.claude/agents/engineering/project-initializer.md) | **Recommended for new projects** - Sets up long-term memory |
 | [Backend Architect](.claude/agents/engineering/backend-architect.md) | Building APIs, databases, server-side logic |
 | [Frontend Developer](.claude/agents/engineering/frontend-developer.md) | Building UIs with React/Vue/Svelte |
 | [AI Engineer](.claude/agents/engineering/ai-engineer.md) | Adding AI features, RAG systems, LLM integration |
@@ -395,9 +395,9 @@ git clone https://github.com/dazeb/Long-Running-AI-Agents.git && mv Long-Running
 Get notifications on your phone when Claude completes tasks or needs approval for important actions.
 
 **What it does:**
-- ✅ Sends task completion alerts to your phone
-- 🔔 Requests approval for sensitive operations (deployments, DB changes)
-- 🚨 Sends error notifications in real-time
+- Sends task completion alerts to your phone
+- Requests approval for sensitive operations (deployments, DB changes)
+- Sends error notifications in real-time
 
 **Setup (2 minutes):**
 ```bash
@@ -444,7 +444,7 @@ MIT License - use freely for personal or commercial projects.
 <summary>💬 <strong>FAQ</strong></summary>
 
 **Q: Do I need to use the Project Initializer?**
-**YES, for best results!** Always start with [@project-initializer](.claude/agents/engineering/project-initializer.md). It creates tracking files that give Claude long-term memory across sessions. Without it, Claude forgets context after long conversations.
+We recommend starting with [@project-initializer](.claude/agents/engineering/project-initializer.md) for new projects. It creates tracking files that give Claude long-term memory across sessions. Without these files, Claude may lose context after long conversations.
 
 **Q: Do I need all 20 agents?**
 No! Use only what you need. Most projects use 2-5 agents after the initial setup.
@@ -471,14 +471,14 @@ For specialized tasks, yes! Agents provide domain expertise, know the right tool
 │  RECOMMENDED WORKFLOW                       │
 ├─────────────────────────────────────────────┤
 │  1. Clone repo into .claude folder          │
-│  2. 🎯 START: @project-initializer          │
+│  2. Start with @project-initializer         │
 │     Creates: tests.json, init.sh, etc.      │
-│  3. USE: @specialized-agent for features    │
+│  3. Use specialized agents for features     │
 │  4. Get expert-level responses with memory  │
 └─────────────────────────────────────────────┘
 ```
 
-**Ready to build?** Start with [@project-initializer](.claude/agents/engineering/project-initializer.md), then use specialized agents! 🚀
+**Ready to build?** Start with [@project-initializer](.claude/agents/engineering/project-initializer.md), then use specialized agents.
 
 </details>
 
