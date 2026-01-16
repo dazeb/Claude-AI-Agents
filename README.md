@@ -66,7 +66,7 @@ That's it! Claude will now respond with frontend-specific best practices, modern
 ---
 
 <details>
-<summary><h2>⚠️ Important: Start Every Project Right</h2></summary>
+<summary>⚠️ <strong>Important: Start Every Project Right</strong></summary>
 
 > **🎯 ALWAYS begin with the [Project Initializer](.claude/agents/engineering/project-initializer.md) agent!**
 
@@ -94,7 +94,7 @@ The Project Initializer will create your entire project structure, roadmap, and 
 ---
 
 <details>
-<summary><h2>🎯 What You Get</h2></summary>
+<summary>🎯 <strong>What You Get</strong></summary>
 
 **45 specialized agents** across different domains:
 
@@ -127,7 +127,7 @@ Each agent knows:
 ---
 
 <details>
-<summary><h2>💡 Why Use These Agents?</h2></summary>
+<summary>💡 <strong>Why Use These Agents?</strong></summary>
 
 **Without agents:**
 ```
@@ -154,7 +154,7 @@ Agents turn general AI into domain experts.
 ---
 
 <details>
-<summary><h2>🚀 Claude Code 2.1 Features (NEW!)</h2></summary>
+<summary>🚀 <strong>Claude Code 2.1 Features (NEW!)</strong></summary>
 
 Leverage the latest Claude Code capabilities:
 
@@ -188,7 +188,7 @@ IDE-like intelligence for 11 languages. Go-to-definition in **50ms** (vs 45 seco
 ---
 
 <details>
-<summary><h2>📚 Browse Agents</h2></summary>
+<summary>📚 <strong>Browse Agents</strong></summary>
 
 ### 💻 Web Development (NEW!)
 | Agent | Use When |
@@ -263,7 +263,7 @@ IDE-like intelligence for 11 languages. Go-to-definition in **50ms** (vs 45 seco
 ---
 
 <details>
-<summary><h2>🚀 How to Use</h2></summary>
+<summary>🚀 <strong>How to Use</strong></summary>
 
 ### Option 1: Claude Code CLI (Recommended)
 ```bash
@@ -310,7 +310,7 @@ git clone https://github.com/dazeb/Long-Running-AI-Agents.git && mv Long-Running
 ---
 
 <details>
-<summary><h2>📱 Optional: Telegram Notifier</h2></summary>
+<summary>📱 <strong>Optional: Telegram Notifier</strong></summary>
 
 Get notifications on your phone when Claude completes tasks or needs approval for important actions.
 
@@ -344,7 +344,7 @@ node telegram-notifier.js approve "Deploy to production?"
 ---
 
 <details>
-<summary><h2>🤝 Contributing</h2></summary>
+<summary>🤝 <strong>Contributing</strong></summary>
 
 Want to add agents or improve existing ones? PRs welcome!
 
@@ -358,7 +358,7 @@ Want to add agents or improve existing ones? PRs welcome!
 ---
 
 <details>
-<summary><h2>📄 License</h2></summary>
+<summary>📄 <strong>License</strong></summary>
 
 MIT License - use freely for personal or commercial projects.
 
@@ -367,7 +367,7 @@ MIT License - use freely for personal or commercial projects.
 ---
 
 <details>
-<summary><h2>💬 FAQ</h2></summary>
+<summary>💬 <strong>FAQ</strong></summary>
 
 **Q: Do I need to use the Project Initializer?**
 **YES, for best results!** Always start with [@project-initializer](.claude/agents/engineering/project-initializer.md). It creates tracking files that give Claude long-term memory across sessions. Without it, Claude forgets context after long conversations.
@@ -392,7 +392,7 @@ For specialized tasks, yes! Agents provide domain expertise, know the right tool
 ---
 
 <details>
-<summary><h2>🚀 Quick Reference</h2></summary>
+<summary>🚀 <strong>Quick Reference</strong></summary>
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -413,7 +413,7 @@ For specialized tasks, yes! Agents provide domain expertise, know the right tool
 ---
 
 <details>
-<summary><h2>📖 Advanced: Long-Running Agents Methodology (Click to expand)</h2></summary>
+<summary>📖 <strong>Advanced: Long-Running Agents Methodology</strong></summary>
 
 ## 🧠 Philosophy: Why Long-Running Agents?
 
@@ -847,7 +847,7 @@ We welcome contributions! Here's how to help:
 ---
 
 <details>
-<summary><h2>🙏 Acknowledgments</h2></summary>
+<summary>🙏 <strong>Acknowledgments</strong></summary>
 
 This project builds upon exceptional work from the AI agent development community:
 
