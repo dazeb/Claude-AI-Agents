@@ -3,7 +3,7 @@
 **Ready-to-use AI agent templates that make Claude smarter at specific tasks.**
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![45 Agents](https://img.shields.io/badge/Agents-45-blue.svg)]()
+[![20 Agents](https://img.shields.io/badge/Agents-20-blue.svg)]()
 [![14 Skills](https://img.shields.io/badge/Skills-14-brightgreen.svg)](.claude/skills/README.md)
 [![Works with Claude Code](https://img.shields.io/badge/Claude_Code-Compatible-blue.svg)]()
 [![Works with OpenCode](https://img.shields.io/badge/OpenCode-Compatible-orange.svg)]()
@@ -84,24 +84,43 @@ You are being equipped with specialized agent capabilities from the Long-Running
    ```bash
    ls .claude/agents/
    ```
-   You should see directories for: engineering, web-development, design, marketing, product, project-management, studio-operations, and testing.
+   You should see directories for: engineering, web-development, testing, and studio-operations.
 
-3. **You now have access to 45+ specialized agents.** Reference them using the `@agent-name` syntax.
+3. **You now have access to 20 specialized development agents.** Reference them using the `@agent-name` syntax.
 
 ## How to Use Agents
 
 When the user requests a task that matches an agent's expertise:
 
 1. **Identify the appropriate agent** from these categories:
+
+   **Engineering (6 agents):**
    - `@project-initializer` - ALWAYS use first for new projects (creates tracking files)
-   - `@react-nextjs-specialist` - Next.js apps, Server Components, App Router
    - `@backend-architect` - APIs, databases, server-side architecture
    - `@frontend-developer` - UI development with React/Vue/Svelte
    - `@ai-engineer` - LLM integration, RAG systems, AI features
    - `@devops-automator` - CI/CD, Docker, deployments
+   - `@mobile-app-builder` - React Native, Flutter apps
+
+   **Web Development (8 agents):**
+   - `@react-nextjs-specialist` - Next.js apps, Server Components, App Router
+   - `@api-integration-specialist` - REST/GraphQL APIs, auth flows
+   - `@fullstack-web-developer` - Complete apps from database to UI
+   - `@web-performance-optimizer` - Site optimization, Core Web Vitals
+   - `@pwa-builder` - Progressive Web Apps, offline functionality
+   - `@css-tailwind-expert` - Advanced styling, design systems
+   - `@static-site-specialist` - Astro, 11ty, Hugo sites
+   - `@browser-automation-specialist` - E2E testing, web scraping
+
+   **Testing & Quality (5 agents):**
    - `@api-tester` - API testing and contract validation
-   - `@performance-benchmarker` - Performance optimization
-   - And 37 more specialized agents...
+   - `@performance-benchmarker` - Load testing, optimization
+   - `@test-results-analyzer` - Test quality analysis
+   - `@tool-evaluator` - Build vs. buy decisions
+   - `@workflow-optimizer` - Developer workflow improvements
+
+   **Operations (1 agent):**
+   - `@infrastructure-maintainer` - System maintenance, internal tools
 
 2. **Activate the agent** by reading its file:
    ```bash
@@ -167,7 +186,7 @@ Read and apply these skills to ensure high-quality, systematic development.
 ## Repository Information
 
 - **Source:** https://github.com/dazeb/Long-Running-AI-Agents
-- **45 Agents** across 8 categories
+- **20 Focused Development Agents** across 4 categories
 - **14 Composable Skills** for systematic development
 - **MIT Licensed**
 ```
@@ -203,18 +222,14 @@ The Project Initializer will create your entire project structure, roadmap, and 
 <details>
 <summary>🎯 <strong>What You Get</strong></summary>
 
-**45 specialized agents** across different domains:
+**20 focused development agents** across core categories:
 
-- **💻 Web Development** (8 agents) - React, APIs, CSS, PWAs, performance, full-stack, static sites, browser automation
-- **🔧 Engineering** (8 agents) - Backend, frontend, mobile, AI, DevOps, prototyping, agent creation
-- **🎨 Design** (5 agents) - UI, UX, branding, animations, visual storytelling
-- **📈 Marketing** (7 agents) - Content, growth, social media, ASO
-- **📦 Product** (3 agents) - Feedback analysis, prioritization, trend research
-- **🎬 Project Management** (3 agents) - Shipping, experiments, coordination
-- **🏢 Operations** (6 agents) - Analytics, finance, support, compliance, infrastructure
-- **🧪 Testing** (5 agents) - API testing, performance, quality analysis
+- **💻 Web Development** (8 agents) - React, Next.js, APIs, CSS/Tailwind, PWAs, performance, full-stack, static sites, browser automation
+- **🔧 Engineering** (6 agents) - Backend, frontend, mobile, AI/LLM, DevOps, project initialization
+- **🧪 Testing & Quality** (5 agents) - API testing, performance benchmarking, test analysis, tool evaluation, workflow optimization
+- **🏢 Operations** (1 agent) - Infrastructure maintenance and internal tooling
 
-**PLUS: 14 composable skills** that make agents systematic and quality-focused:
+**PLUS: 14 composable skills** for systematic, quality-focused development:
 
 - **🛠️ Development** - TDD, systematic debugging, verification protocols
 - **📋 Planning** - Brainstorming, plan writing, execution workflows
@@ -291,7 +306,7 @@ IDE-like intelligence for 11 languages. Go-to-definition in **50ms** (vs 45 seco
 <details>
 <summary>📚 <strong>Browse Agents</strong></summary>
 
-### 💻 Web Development (NEW!)
+### 💻 Web Development (8 agents)
 | Agent | Use When |
 |-------|----------|
 | [React/Next.js Specialist](.claude/agents/web-development/react-nextjs-specialist.md) | Building Next.js apps, Server Components, App Router |
@@ -301,63 +316,31 @@ IDE-like intelligence for 11 languages. Go-to-definition in **50ms** (vs 45 seco
 | [PWA Builder](.claude/agents/web-development/pwa-builder.md) | Making apps installable and work offline |
 | [CSS & Tailwind Expert](.claude/agents/web-development/css-tailwind-expert.md) | Advanced styling, animations, design systems |
 | [Static Site Specialist](.claude/agents/web-development/static-site-specialist.md) | Building fast sites with Astro, 11ty, Hugo |
-| [Browser Automation Specialist](.claude/agents/web-development/browser-automation-specialist.md) | E2E testing, web scraping, visual regression, Claude in Chrome |
+| [Browser Automation Specialist](.claude/agents/web-development/browser-automation-specialist.md) | E2E testing, web scraping, visual regression |
 
-### 🏗️ Engineering
+### 🏗️ Engineering (6 agents)
 | Agent | Use When |
 |-------|----------|
 | [🎯 **Project Initializer**](.claude/agents/engineering/project-initializer.md) | ⭐ **START HERE!** Every new project (enables long-term memory) |
-| [AI Engineer](.claude/agents/engineering/ai-engineer.md) | Adding AI features, RAG systems, LLM integration |
 | [Backend Architect](.claude/agents/engineering/backend-architect.md) | Building APIs, databases, server-side logic |
-| [DevOps Automator](.claude/agents/engineering/devops-automator.md) | Setting up CI/CD, Docker, deployments |
 | [Frontend Developer](.claude/agents/engineering/frontend-developer.md) | Building UIs with React/Vue/Svelte |
+| [AI Engineer](.claude/agents/engineering/ai-engineer.md) | Adding AI features, RAG systems, LLM integration |
+| [DevOps Automator](.claude/agents/engineering/devops-automator.md) | Setting up CI/CD, Docker, deployments |
 | [Mobile App Builder](.claude/agents/engineering/mobile-app-builder.md) | Creating React Native or Flutter apps |
-| [Rapid Prototyper](.claude/agents/engineering/rapid-prototyper.md) | Quick MVPs and proof-of-concepts |
-| [Agent Creator](.claude/agents/engineering/agent-creator.md) | Creating new specialized AI agents following best practices |
 
-### 🎨 Design
+### 🧪 Testing & Quality (5 agents)
 | Agent | Use When |
 |-------|----------|
-| [Brand Guardian](.claude/agents/design/brand-guardian.md) | Ensuring brand consistency |
-| [UI Designer](.claude/agents/design/ui-designer.md) | Designing interfaces and components |
-| [UX Researcher](.claude/agents/design/ux-researcher.md) | User research and testing |
-| [Visual Storyteller](.claude/agents/design/visual-storyteller.md) | Creating illustrations and infographics |
-| [Whimsy Injector](.claude/agents/design/whimsy-injector.md) | Adding delightful animations and interactions |
-
-### 📈 Marketing
-| Agent | Use When |
-|-------|----------|
-| [Content Creator](.claude/agents/marketing/content-creator.md) | Writing blog posts, newsletters, case studies |
-| [Growth Hacker](.claude/agents/marketing/growth-hacker.md) | Optimizing funnels and acquisition |
-| [ASO Specialist](.claude/agents/marketing/app-store-optimizer.md) | Improving app store visibility |
-| [Instagram Curator](.claude/agents/marketing/instagram-curator.md) | Planning Instagram content |
-| [Reddit Builder](.claude/agents/marketing/reddit-community-builder.md) | Building Reddit communities |
-| [TikTok Strategist](.claude/agents/marketing/tiktok-strategist.md) | Creating TikTok content strategy |
-| [Twitter Engager](.claude/agents/marketing/twitter-engager.md) | Growing Twitter presence |
-
-### 📦 Product & PM
-| Agent | Use When |
-|-------|----------|
-| [Feedback Synthesizer](.claude/agents/product/feedback-synthesizer.md) | Analyzing user feedback |
-| [Sprint Prioritizer](.claude/agents/product/sprint-prioritizer.md) | Prioritizing features |
-| [Trend Researcher](.claude/agents/product/trend-researcher.md) | Market research and trends |
-| [Experiment Tracker](.claude/agents/project-management/experiment-tracker.md) | Managing A/B tests |
-| [Project Shipper](.claude/agents/project-management/project-shipper.md) | Coordinating launches |
-| [Studio Producer](.claude/agents/project-management/studio-producer.md) | Managing multiple projects |
-
-### 🏢 Operations & Testing
-| Agent | Use When |
-|-------|----------|
-| [Analytics Reporter](.claude/agents/studio-operations/analytics-reporter.md) | Tracking metrics and KPIs |
-| [Finance Tracker](.claude/agents/studio-operations/finance-tracker.md) | Managing budgets and runway |
-| [Infrastructure Maintainer](.claude/agents/studio-operations/infrastructure-maintainer.md) | Maintaining internal tools |
-| [Legal & Compliance](.claude/agents/studio-operations/legal-compliance-checker.md) | GDPR, licensing, compliance |
-| [Support Responder](.claude/agents/studio-operations/support-responder.md) | Handling customer support |
-| [API Tester](.claude/agents/testing/api-tester.md) | Testing API contracts |
+| [API Tester](.claude/agents/testing/api-tester.md) | Testing API contracts and endpoints |
 | [Performance Benchmarker](.claude/agents/testing/performance-benchmarker.md) | Load testing and optimization |
-| [Test Results Analyzer](.claude/agents/testing/test-results-analyzer.md) | Analyzing test quality |
-| [Tool Evaluator](.claude/agents/testing/tool-evaluator.md) | Build vs. buy decisions |
+| [Test Results Analyzer](.claude/agents/testing/test-results-analyzer.md) | Analyzing test quality and coverage |
+| [Tool Evaluator](.claude/agents/testing/tool-evaluator.md) | Build vs. buy decisions for tools |
 | [Workflow Optimizer](.claude/agents/testing/workflow-optimizer.md) | Improving developer workflows |
+
+### 🏢 Operations (1 agent)
+| Agent | Use When |
+|-------|----------|
+| [Infrastructure Maintainer](.claude/agents/studio-operations/infrastructure-maintainer.md) | Maintaining internal tools and infrastructure |
 
 </details>
 
@@ -463,7 +446,7 @@ MIT License - use freely for personal or commercial projects.
 **Q: Do I need to use the Project Initializer?**
 **YES, for best results!** Always start with [@project-initializer](.claude/agents/engineering/project-initializer.md). It creates tracking files that give Claude long-term memory across sessions. Without it, Claude forgets context after long conversations.
 
-**Q: Do I need all 43 agents?**
+**Q: Do I need all 20 agents?**
 No! Use only what you need. Most projects use 2-5 agents after the initial setup.
 
 **Q: Can I modify agents for my needs?**
@@ -854,13 +837,13 @@ Strict verification protocols:
 
 | Metric | Value |
 |--------|-------|
-| **Total Agents** | 36 |
-| **Categories** | 7 (Engineering, Design, Marketing, Product, PM, Operations, Testing) |
-| **Lines of Content** | ~3,600 lines of detailed role definitions |
-| **Tools Referenced** | 200+ specialized tools across all domains |
-| **Example Tasks** | 250+ concrete implementation examples |
-| **Anti-patterns** | 360+ specific mistakes documented |
-| **Average Agent Size** | ~100 lines (vs. ~15 before enhancement) |
+| **Total Agents** | 20 |
+| **Categories** | 4 (Engineering, Web Development, Testing & Quality, Operations) |
+| **Lines of Content** | ~2,000 lines of focused development guidance |
+| **Tools Referenced** | 100+ specialized development tools |
+| **Example Tasks** | 150+ concrete implementation examples |
+| **Anti-patterns** | 200+ development mistakes documented |
+| **Average Agent Size** | ~100 lines of focused expertise |
 
 ---
 
@@ -955,4 +938,4 @@ These skills transform our agents from knowledge repositories into systematic, q
 
 ---
 
-**Built by developers, for developers** • **MIT Licensed** • **45 Specialized Agents** • **14 Composable Skills**
+**Built by developers, for developers** • **MIT Licensed** • **20 Focused Development Agents** • **14 Composable Skills**
