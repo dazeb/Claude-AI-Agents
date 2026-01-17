@@ -25,7 +25,7 @@
 2. Reference an agent when talking to Claude (e.g., `@frontend-developer`)
 3. Claude now has deep expertise in that domain
 
-📋 **[View Complete Feature List →](FEATURES.md)** | 📚 **[Marketplace Docs](MARKETPLACE.md)** | 🪝 **[Hooks Guide](.claude/hooks/README.md)** | 🔌 **[MCP Guide](MCP_INTEGRATION.md)** | ⚡ **[LSP Guide](LSP_SETUP.md)**
+📋 **[View Complete Feature List →](docs/FEATURES.md)** | 📚 **[Marketplace Docs](docs/guides/MARKETPLACE.md)** | 🪝 **[Hooks Guide](.claude/hooks/README.md)** | 🔌 **[MCP Guide](docs/guides/MCP_INTEGRATION.md)** | ⚡ **[LSP Guide](docs/guides/LSP_SETUP.md)**
 
 **Try it now:**
 
@@ -51,7 +51,7 @@ curl -fsSL https://raw.githubusercontent.com/dazeb/ClaudePlaybook/main/install.s
 ```
 Interactive installer lets you choose which agents to install.
 
-📚 **[View Full Marketplace Documentation →](MARKETPLACE.md)**
+📚 **[View Full Marketplace Documentation →](docs/guides/MARKETPLACE.md)**
 
 ### Option C: Manual Install
 ```bash
@@ -329,13 +329,13 @@ Connect to 15+ services for live data:
 - **Slack** - Team notifications
 - **And 11 more...**
 
-📚 **[View MCP Integration Guide →](MCP_INTEGRATION.md)**
+📚 **[View MCP Integration Guide →](docs/guides/MCP_INTEGRATION.md)**
 
 ### ⚡ LSP - 900x Faster Code Navigation
 IDE-like intelligence for 11 languages. Go-to-definition in **50ms** (vs 45 seconds):
 - TypeScript/JavaScript, Python, Go, Rust, Java, C/C++, C#, PHP, Ruby, Kotlin, HTML/CSS
 
-📚 **[View LSP Setup Guide →](LSP_SETUP.md)**
+📚 **[View LSP Setup Guide →](docs/guides/LSP_SETUP.md)**
 
 </details>
 
@@ -981,7 +981,7 @@ We welcome contributions! Here's how to help:
 
 ---
 
-**[Read full advanced methodology documentation →](LONG_RUNNING_AGENTS.md)**
+**[Read full advanced methodology documentation →](docs/LONG_RUNNING_AGENTS.md)**
 
 </details>
 
