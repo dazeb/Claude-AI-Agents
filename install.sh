@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# Claude AI Agents - Interactive Installer
+# ClaudePlaybook - Interactive Installer
 # https://github.com/dazeb/ClaudePlaybook
 
 VERSION="2.2.0"
@@ -25,7 +25,7 @@ print_warning() { echo -e "${YELLOW}⚠${NC} $1"; }
 print_header() {
     echo ""
     echo "╔════════════════════════════════════════════════════════╗"
-    echo "║         Claude AI Agents - Marketplace Installer       ║"
+    echo "║           ClaudePlaybook - Marketplace Installer       ║"
     echo "║                   Version $VERSION                        ║"
     echo "╚════════════════════════════════════════════════════════╝"
     echo ""
@@ -96,32 +96,29 @@ clone_repo() {
 # Show agent categories
 show_categories() {
     echo "═══════════════════════════════════════════════════════"
-    echo "  Available Agent Categories"
+    echo "  ClaudePlaybook - 20 Specialized Development Agents"
     echo "═══════════════════════════════════════════════════════"
     echo ""
-    echo "  1) 🌐 Web Development (7 agents)"
-    echo "     React, APIs, Performance, PWAs, CSS, Static Sites"
+    echo "  1) 🌐 Web Development (8 agents)"
+    echo "     Next.js, APIs, Full-stack, Performance, PWAs,"
+    echo "     CSS/Tailwind, Static Sites, Browser Automation"
     echo ""
-    echo "  2) 🏗️  Engineering (7 agents)"
-    echo "     Backend, Frontend, Mobile, AI, DevOps, Prototyping"
+    echo "  2) 🏗️  Engineering (6 agents)"
+    echo "     Backend, Frontend, Mobile, AI/LLM, DevOps,"
+    echo "     Project Initializer"
     echo ""
-    echo "  3) 🎨 Design (5 agents)"
-    echo "     UI, UX, Branding, Visual, Animations"
+    echo "  3) 🧪 Testing & Quality (5 agents)"
+    echo "     API Testing, Performance Benchmarking, Test Analysis,"
+    echo "     Tool Evaluation, Workflow Optimization"
     echo ""
-    echo "  4) 📈 Marketing (7 agents)"
-    echo "     Content, Growth, Social Media, ASO"
+    echo "  4) 🏢 Studio Operations (1 agent)"
+    echo "     Infrastructure Maintenance & Internal Tooling"
     echo ""
-    echo "  5) 📦 Product & PM (6 agents)"
-    echo "     Feedback, Prioritization, Experiments, Shipping"
+    echo "  5) ⭐ All Agents (20 agents)"
+    echo "     Complete playbook - all categories"
     echo ""
-    echo "  6) 🏢 Operations & Testing (11 agents)"
-    echo "     Analytics, Testing, Finance, Support, Infrastructure"
-    echo ""
-    echo "  7) ⭐ All Agents (43 agents)"
-    echo "     Install everything"
-    echo ""
-    echo "  8) 🎯 Essentials Only (Project Initializer + Web Dev)"
-    echo "     Best for getting started"
+    echo "  6) 🎯 Essentials (Recommended for starters)"
+    echo "     Project Initializer + Web Development (9 agents)"
     echo ""
     echo "  0) Exit"
     echo ""
@@ -142,46 +139,34 @@ install_category() {
         1)
             print_info "Installing Web Development agents..."
             cp -r "$source_dir/web-development" "$dest_dir/"
-            print_success "Installed 7 web development agents"
+            print_success "Installed 8 web development agents"
             ;;
         2)
             print_info "Installing Engineering agents..."
             cp -r "$source_dir/engineering" "$dest_dir/"
-            print_success "Installed 7 engineering agents"
+            print_success "Installed 6 engineering agents"
             ;;
         3)
-            print_info "Installing Design agents..."
-            cp -r "$source_dir/design" "$dest_dir/"
-            print_success "Installed 5 design agents"
+            print_info "Installing Testing & Quality agents..."
+            cp -r "$source_dir/testing" "$dest_dir/"
+            print_success "Installed 5 testing & quality agents"
             ;;
         4)
-            print_info "Installing Marketing agents..."
-            cp -r "$source_dir/marketing" "$dest_dir/"
-            print_success "Installed 7 marketing agents"
+            print_info "Installing Studio Operations agent..."
+            cp -r "$source_dir/studio-operations" "$dest_dir/"
+            print_success "Installed 1 studio operations agent"
             ;;
         5)
-            print_info "Installing Product & PM agents..."
-            cp -r "$source_dir/product" "$dest_dir/"
-            cp -r "$source_dir/project-management" "$dest_dir/"
-            print_success "Installed 6 product & PM agents"
-            ;;
-        6)
-            print_info "Installing Operations & Testing agents..."
-            cp -r "$source_dir/studio-operations" "$dest_dir/"
-            cp -r "$source_dir/testing" "$dest_dir/"
-            print_success "Installed 11 operations & testing agents"
-            ;;
-        7)
             print_info "Installing all agents..."
             cp -r "$source_dir/"* "$dest_dir/"
-            print_success "Installed all 43 agents"
+            print_success "Installed all 20 agents - complete playbook!"
             ;;
-        8)
+        6)
             print_info "Installing essentials (Project Initializer + Web Dev)..."
             mkdir -p "$dest_dir/engineering"
             cp "$source_dir/engineering/project-initializer.md" "$dest_dir/engineering/"
             cp -r "$source_dir/web-development" "$dest_dir/"
-            print_success "Installed Project Initializer + 7 web development agents"
+            print_success "Installed essentials: 9 agents (1 project init + 8 web dev)"
             ;;
     esac
 
@@ -230,7 +215,7 @@ main() {
 
     while true; do
         show_categories
-        read -p "Select category to install [0-8]: " choice
+        read -p "Select category to install [0-6]: " choice
         echo ""
 
         case $choice in
@@ -239,7 +224,7 @@ main() {
                 cleanup
                 exit 0
                 ;;
-            [1-8])
+            [1-6])
                 install_category "$choice"
                 read -p "Install another category? (y/n): " continue
                 if [[ ! $continue =~ ^[Yy]$ ]]; then
@@ -248,7 +233,7 @@ main() {
                 echo ""
                 ;;
             *)
-                print_error "Invalid choice. Please select 0-8."
+                print_error "Invalid choice. Please select 0-6."
                 echo ""
                 ;;
         esac
