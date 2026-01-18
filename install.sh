@@ -53,7 +53,7 @@ detect_environment() {
         echo "  1) Claude Code CLI (default)"
         echo "  2) OpenCode"
         echo ""
-        read -p "Enter choice [1-2]: " choice
+        read -p "Enter choice [1-2]: " choice < /dev/tty
 
         case $choice in
             2)
@@ -218,7 +218,7 @@ main() {
 
     while true; do
         show_categories
-        read -p "Select category to install [0-6]: " choice
+        read -p "Select category to install [0-6]: " choice < /dev/tty
         echo ""
 
         case $choice in
@@ -229,7 +229,7 @@ main() {
                 ;;
             [1-6])
                 install_category "$choice"
-                read -p "Install another category? (y/n): " continue
+                read -p "Install another category? (y/n): " continue < /dev/tty
                 if [[ ! $continue =~ ^[Yy]$ ]]; then
                     break
                 fi
