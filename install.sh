@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 # ClaudePlaybook - Interactive Installer
 # https://github.com/dazeb/ClaudePlaybook
@@ -82,12 +81,12 @@ clone_repo() {
         rm -rf "$TEMP_DIR"
     fi
 
-    git clone --depth 1 "$REPO_URL" "$TEMP_DIR" > /dev/null 2>&1
-
-    if [ $? -eq 0 ]; then
+    if git clone --depth 1 "$REPO_URL" "$TEMP_DIR" > /dev/null 2>&1; then
         print_success "Downloaded successfully"
     else
         print_error "Failed to download repository"
+        print_error "Please check your internet connection and try again"
+        cleanup
         exit 1
     fi
     echo ""
@@ -133,7 +132,11 @@ install_category() {
     local dest_dir="$TARGET_DIR/$AGENTS_DIR"
 
     # Create target directory if it doesn't exist
-    mkdir -p "$dest_dir"
+    if ! mkdir -p "$dest_dir"; then
+        print_error "Failed to create directory: $dest_dir"
+        print_error "Please check permissions and try again"
+        return 1
+    fi
 
     case $category in
         1)
