@@ -5,7 +5,7 @@
 
 VERSION="2.2.0"
 REPO_URL="https://github.com/dazeb/ClaudePlaybook.git"
-TEMP_DIR="/tmp/claude-agents-$$"
+TEMP_DIR="${TMPDIR:-/tmp}/claude-agents-$$"
 
 # Colors for output
 RED='\033[0;31m'
@@ -19,6 +19,19 @@ print_info() { echo -e "${BLUE}ℹ${NC} $1"; }
 print_success() { echo -e "${GREEN}✓${NC} $1"; }
 print_error() { echo -e "${RED}✗${NC} $1"; }
 print_warning() { echo -e "${YELLOW}⚠${NC} $1"; }
+
+# Read input from terminal (handles piped execution)
+read_input() {
+    local prompt="$1"
+    local var_name="$2"
+
+    if [ -r /dev/tty ]; then
+        read -p "$prompt" "$var_name" < /dev/tty
+    else
+        # Fallback for environments without /dev/tty
+        read -p "$prompt" "$var_name"
+    fi
+}
 
 # Print header
 print_header() {
@@ -53,7 +66,7 @@ detect_environment() {
         echo "  1) Claude Code CLI (default)"
         echo "  2) OpenCode"
         echo ""
-        read -p "Enter choice [1-2]: " choice < /dev/tty
+        read_input "Enter choice [1-2]: " choice
 
         case $choice in
             2)
@@ -131,6 +144,13 @@ install_category() {
     local source_dir="$TEMP_DIR/agent"
     local dest_dir="$TARGET_DIR/$AGENTS_DIR"
 
+    # Verify source directory exists
+    if [ ! -d "$source_dir" ]; then
+        print_error "Source directory not found: $source_dir"
+        print_error "Repository structure may have changed"
+        return 1
+    fi
+
     # Create target directory if it doesn't exist
     if ! mkdir -p "$dest_dir"; then
         print_error "Failed to create directory: $dest_dir"
@@ -141,35 +161,59 @@ install_category() {
     case $category in
         1)
             print_info "Installing Web Development agents..."
-            cp -r "$source_dir/web-development" "$dest_dir/"
-            print_success "Installed 8 web development agents"
+            if cp -r "$source_dir/web-development" "$dest_dir/" 2>/dev/null; then
+                print_success "Installed 8 web development agents"
+            else
+                print_error "Failed to install Web Development agents"
+                return 1
+            fi
             ;;
         2)
             print_info "Installing Engineering agents..."
-            cp -r "$source_dir/engineering" "$dest_dir/"
-            print_success "Installed 6 engineering agents"
+            if cp -r "$source_dir/engineering" "$dest_dir/" 2>/dev/null; then
+                print_success "Installed 6 engineering agents"
+            else
+                print_error "Failed to install Engineering agents"
+                return 1
+            fi
             ;;
         3)
             print_info "Installing Testing & Quality agents..."
-            cp -r "$source_dir/testing" "$dest_dir/"
-            print_success "Installed 5 testing & quality agents"
+            if cp -r "$source_dir/testing" "$dest_dir/" 2>/dev/null; then
+                print_success "Installed 5 testing & quality agents"
+            else
+                print_error "Failed to install Testing & Quality agents"
+                return 1
+            fi
             ;;
         4)
             print_info "Installing Studio Operations agent..."
-            cp -r "$source_dir/studio-operations" "$dest_dir/"
-            print_success "Installed 1 studio operations agent"
+            if cp -r "$source_dir/studio-operations" "$dest_dir/" 2>/dev/null; then
+                print_success "Installed 1 studio operations agent"
+            else
+                print_error "Failed to install Studio Operations agent"
+                return 1
+            fi
             ;;
         5)
             print_info "Installing all agents..."
-            cp -r "$source_dir/"* "$dest_dir/"
-            print_success "Installed all 20 agents - complete playbook!"
+            if cp -r "$source_dir/"* "$dest_dir/" 2>/dev/null; then
+                print_success "Installed all 20 agents - complete playbook!"
+            else
+                print_error "Failed to install all agents"
+                return 1
+            fi
             ;;
         6)
             print_info "Installing essentials (Project Initializer + Web Dev)..."
-            mkdir -p "$dest_dir/engineering"
-            cp "$source_dir/engineering/project-initializer.md" "$dest_dir/engineering/"
-            cp -r "$source_dir/web-development" "$dest_dir/"
-            print_success "Installed essentials: 9 agents (1 project init + 8 web dev)"
+            if mkdir -p "$dest_dir/engineering" && \
+               cp "$source_dir/engineering/project-initializer.md" "$dest_dir/engineering/" 2>/dev/null && \
+               cp -r "$source_dir/web-development" "$dest_dir/" 2>/dev/null; then
+                print_success "Installed essentials: 9 agents (1 project init + 8 web dev)"
+            else
+                print_error "Failed to install essentials"
+                return 1
+            fi
             ;;
     esac
 
@@ -218,7 +262,7 @@ main() {
 
     while true; do
         show_categories
-        read -p "Select category to install [0-6]: " choice < /dev/tty
+        read_input "Select category to install [0-6]: " choice
         echo ""
 
         case $choice in
@@ -229,7 +273,7 @@ main() {
                 ;;
             [1-6])
                 install_category "$choice"
-                read -p "Install another category? (y/n): " continue < /dev/tty
+                read_input "Install another category? (y/n): " continue
                 if [[ ! $continue =~ ^[Yy]$ ]]; then
                     break
                 fi
